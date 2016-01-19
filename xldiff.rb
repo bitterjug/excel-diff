@@ -44,7 +44,7 @@ end
 #
 # TODO: This should probably behave differently if we're hiding calculated values
 # then we should show all literal values, and for calculated values show some hint 
-# that its a formula. We cant lways showt he formula because of shred formula ranges
+# that its a formula. We cant always show the formula because of shred formula ranges
 #
 def value(cell)
     $options.values ? " = #{cell.value}" : ": "
