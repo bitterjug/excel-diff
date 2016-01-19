@@ -13,7 +13,7 @@ $options.formulas = true
 OptionParser.new do |opts|
   opts.banner = usage
 
-  opts.on("-v", "--no-values", "Exclude cell values") do |v|
+  opts.on("-v", "--no-values", "Exclude calculated values") do |v|
     $options.values = v
     # TODO: should this be for calclated values only?
   end
@@ -41,13 +41,8 @@ def address(cell)
     "#{sheet}!#{ref}"
 end
 
-#
-# TODO: This should probably behave differently if we're hiding calculated values
-# then we should show all literal values, and for calculated values show some hint 
-# that its a formula. We cant always show the formula because of shred formula ranges
-#
 def value(cell)
-    $options.values ? " = #{cell.value}" : ": "
+    (not $options.values and cell.formula) ? ": " : " = #{cell.value}"
 end
 
 def formula(cell)
