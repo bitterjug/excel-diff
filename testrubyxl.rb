@@ -36,7 +36,7 @@ if ARGV.length != 1
 end
 
 def address(cell)
-    ref = RubyXL::Reference.ind2ref(cell.column, cell.row) # TODO should this be the other way round?
+    ref = RubyXL::Reference.ind2ref(cell.row, cell.column) 
     sheet = cell.worksheet.sheet_name  #  TODO normalize and transcode
     "#{sheet}!#{ref}"
 end
