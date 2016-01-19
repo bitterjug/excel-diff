@@ -53,7 +53,7 @@ end
 def formula(cell)
     if $options.formulas and cell.formula
         range = cell.formula.t == "shared" ?  "[#{cell.formula.ref.to_s}]" : ""
-        return "\t#{cell.formula.t} formula #{range} =#{cell.formula.expression}"
+        return "\n\t#{cell.formula.t} formula #{range} =#{cell.formula.expression}"
     else
         return ""
     end
@@ -63,8 +63,7 @@ end
 # TODO:  Unicode normalize NFKD and convert to ascii? to make diff work
 # https://github.com/knu/ruby-unf
 def ouput(cell)
-    puts "#{address(cell)}#{value(cell)}"
-    puts formula(cell)
+    puts "#{address(cell)}#{value(cell)}#{formula(cell)}"
 end
 
 def process(wb)
@@ -72,7 +71,6 @@ def process(wb)
         ws.each do |row|
             row && row.cells.each do |cell|
                 ouput(cell)
-                # binding.pry
             end
             puts
         end
