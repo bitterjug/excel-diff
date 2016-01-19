@@ -1,7 +1,6 @@
 require 'optparse'
 require 'ostruct'
 require 'rubyXL'
-require 'pry'
 
 usage = "Usage: ruby #{__FILE__} [options] <workbook-file>"
 
@@ -47,13 +46,12 @@ end
 
 def formula(cell)
     if $options.formulas and cell.formula
-        range = cell.formula.t == "shared" ?  "[#{cell.formula.ref.to_s}] " : ""
-        type = cell.formula.t ? "#{cell.formula.t} formula" : "formula"
-        return "#{$options.values ? "\n\t" : ""}#{type} #{range}=#{cell.formula.expression}"
+        range = cell.formula.t ?  "[#{cell.formula.ref.to_s}] " : ""
+        type = cell.formula.t ? "#{cell.formula.t} " : ""
+        return "#{$options.values ? "\n\t" : ""}#{type}formula #{range}=#{cell.formula.expression}"
     else
         return ""
     end
-    # cell.formula.ref is a Referenec object !! test with cross sheet links?
 end
 
 # TODO:  Unicode normalize NFKD and convert to ascii? to make diff work
