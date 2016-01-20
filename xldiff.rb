@@ -71,7 +71,12 @@ def process(wb)
     end
 end
 
+# TODO cross workbook referencs appear to use a numerical index into a list of refrences that I can't access fro here
+# TODO: print wb.dfined_names 
+# TODO: include formatting
 
 filename = File.expand_path(ARGV[0])
 wb = RubyXL::Parser.parse(filename)
+require 'pry'
+binding.pry
 process(wb)
