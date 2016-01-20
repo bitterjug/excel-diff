@@ -78,6 +78,4 @@ end
 
 filename = File.expand_path(ARGV[0])
 wb = RubyXL::Parser.parse(filename)
-require 'pry'
-binding.pry
 process(wb)
