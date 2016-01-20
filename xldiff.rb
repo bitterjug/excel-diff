@@ -1,3 +1,4 @@
+#! /usr/bin/env ruby
 require 'optparse'
 require 'ostruct'
 require 'rubyXL'
