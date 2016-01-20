@@ -3,7 +3,7 @@ require 'optparse'
 require 'ostruct'
 require 'rubyXL'
 
-usage = "Usage: ruby #{__FILE__} [options] <workbook-file>"
+usage = "Usage: #{__FILE__} [options] <workbook-file>"
 
 $options = OpenStruct.new
 # defaults:

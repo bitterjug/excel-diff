@@ -23,7 +23,11 @@ On Linux, I create a link called `xl-textconv` in my `~/bin`.
 Use
 ----
 
-xl-textconv
+    Usage: xl-textconv [options] <workbook-file>
+        -v, --no-values                  Exclude calculated values
+        -f, --no-formulas                Exclude cell formulas
+        -h, --help                       Show this message
+
 
 Set up Git to use it:
 ---------------------
