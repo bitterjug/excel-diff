@@ -39,6 +39,7 @@ Use
 
 Set up Git to use it
 ---------------------
+
 See [the Git Book](http://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#Binary-Files)
 
 Tell git that files ending `xlsx` are to be treated as Excel for diff:
@@ -51,9 +52,12 @@ Tell Git how to diff Excel files: in `.git/config`:
     [diff "excel"]
         binary = True
         textconv = xl-textconv -v
+        cachetextconv = true
 
-See also [This node.js version](https://github.com/pismute/node-textconv) with some
-interesting notes on use.
+See also [This node.js version](https://github.com/pismute/node-textconv) with
+some interesting notes on use, including using
+[cachetextconv](https://git-scm.com/docs/gitattributes/1.7.9)
+
 
 Caveat emptor
 --------------
