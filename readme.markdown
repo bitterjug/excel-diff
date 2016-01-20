@@ -3,8 +3,20 @@ Excel Textconv
 
 A script to render an excel (.xlsx) workbook as text suitable to use with
 `diff` and, in particular, `git diff`, to get readable diffs, for example with
-Git.  Inspired by
-[`git_diff_xlsx`](https://wiki.ucl.ac.uk/display/~ucftpw2/2013/10/18/Using+git+for+version+control+of+spreadsheet+models+-+part+1+of+3).
+Git.  Inspired by William Usher's [`git_diff_xlsx`](https://github.com/willu47/git_diff_xlsx/) 
+which he wrote for working with the UK TIMES model (see [his blog](https://wiki.ucl.ac.uk/display/~ucftpw2/2013/10/18/Using+git+for+version+control+of+spreadsheet+models+-+part+1+of+3)).
+I wrote this in Ruby (using `rubyXL`) because thats the language of the other [UK-TIMES tools](https://github.com/decc/times-excel-tools)
+
+Caveat emptor
+--------------
+
+- I'm not a Ruby programmer.
+- There are no tests.
+
+Dependencies
+-------------
+
+- [RubyXL](https://github.com/weshatheleopard/rubyXL)
 
 Features
 --------
